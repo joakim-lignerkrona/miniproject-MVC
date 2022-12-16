@@ -1,0 +1,1 @@
+Scaffold-DbContext -Connection name=DefaultConnection -Provider Microsoft.EntityFrameworkCore.SqlServer -Project "miniproject-MVC" -OutputDir "Models/Entities" -Context "ConsultantContext" -NoOnConfiguring -Force
