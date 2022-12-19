@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using miniprojekt_MVC.Data;
+using miniprojekt_MVC.Models;
+using miniprojekt_MVC.Models.Entities;
 
 namespace miniprojekt_MVC
 {
@@ -11,13 +13,21 @@ namespace miniprojekt_MVC
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddTransient<GroupsService>();
+
             var connectionString = builder.Configuration.GetConnectionString("UserConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            var connString = builder.Configuration
+                .GetConnectionString("DataConnection");
+            builder.Services.AddDbContext<ConsultantContext>(
+                o => o.UseSqlServer(connString));
+
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
