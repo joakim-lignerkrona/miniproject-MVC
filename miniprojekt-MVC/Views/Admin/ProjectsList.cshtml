@@ -1,0 +1,64 @@
+﻿@using miniprojekt_MVC.Models.Entities;
+@model Project[];
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Projects</h1>
+            <hr />
+            <div class="row">
+                <div class="col-12">
+                    <button id="create-project" class="btn btn-outline-primary">Create New</button>
+                    <form method="post" action="/admin/Projects" id="create-form" class="visually-hidden col-5
+                            <label class="form-label" for="Name">Project name:</label>
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="Name" />
+                            <input class="btn btn-primary" type="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Created
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Created
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Project" asp-route-id="@item.Id">Use</a> |
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/ProjectScript.js"></script>

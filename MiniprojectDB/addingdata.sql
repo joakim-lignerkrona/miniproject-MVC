@@ -1,4 +1,4 @@
-﻿insert into [ConsultantRandomizer].[Group](name)
+﻿insert into [ConsultantRandomizer].[GroupNames](name)
 values
 ('Hejlsberg'),
 ('Eich'),
@@ -17,3 +17,10 @@ Values
 ('Jockan'),
 ('Raveforte'),
 ('Square Hammer')
+
+
+insert into [ConsultantRandomizer].[Project](Name)
+Values 
+('First'),
+('Second'),
+('Third')

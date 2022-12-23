@@ -64,9 +64,10 @@
   <ItemGroup>
     <Build Include="ConsultantRandomizer\Tables\People.sql" />
     <Build Include="ConsultantRandomizer.sql" />
-    <Build Include="ConsultantRandomizer\Tables\PeopleInGroupProject.sql" />
+    <Build Include="ConsultantRandomizer\Tables\PersonInGroup.sql" />
     <Build Include="ConsultantRandomizer\Tables\Project.sql" />
-    <Build Include="ConsultantRandomizer\Tables\Group.sql" />
+    <Build Include="ConsultantRandomizer\Tables\GroupNames.sql" />
+    <Build Include="ConsultantRandomizer\Tables\ProjectGroup.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MiniprojectDB.refactorlog" />

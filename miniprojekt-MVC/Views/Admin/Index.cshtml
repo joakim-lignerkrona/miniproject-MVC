@@ -1,90 +1,17 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using miniprojekt_MVC.Models.Entities;
+@model Project[];
 @{
+    ViewData["Title"] = "Dashboard";
 }
-<h1>
-  <div class="container">
-        <div class="row" style="height: 100vh">
-          <div class="col-3 border-end d-flex flex-column">
-        <h3>Select users:</h3>
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Dashboard</h1>
+            
+            <a asp-action="Projects" class="btn btn-outline-primary">Projects</a>
 
-        <div class="list-group flex-grow-1">
-
-          <!-- Item start -->
-          <div class="list-group-item list-group-item">
-            <div class="d-flex justify-content-between align-items-center">
-
-              <h5 class="mb-0 user-select-none">Username</h5>
-
-              <div class="form-check form-switch mb-0">
-                <input class="form-check-input h5 user-select-auto" type="checkbox" role="switch"
-                  id="flexSwitchCheckDefault" />
-              </div>
-            </div>
-          </div>
-          <!-- Item end -->
+            
         </div>
-        <div class="row p-3 border-top">
-          <div class="col-12 d-flex justify-content-between">
-            <input type="number" name="groupSize" id="groupSize" min="0" max="10" class="form-control"
-              style="max-width: 5rem; font-size: xx-large;">
-            <button type="button"
-              class="btn btn-secondary d-flex flex-column justify-content-center align-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                class="bi bi-people-fill" viewBox="0 0 16 16">
-                <path
-                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-              </svg>
-              Randomize Group
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-9 d-flex flex-column">
-        <h2 class="mb-3">Groups:</h2>
-        <div class="container flex-grow-1 d-flex flex-column">
-          <div class=" row flex-grow-1 row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-
-
-              <div class="card" style="max-width: 10rem; max-height: 20rem;">
-                <div class="card-header">
-                  Group Name
-                </div>
-                <div class="card-body">
-                  <!-- Item start -->
-                  <div class="list-group-item list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-
-                      <h5 class="mb-0 user-select-none">Username</h5>
-                    </div>
-                  </div>
-                  <!-- Item end -->
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="row p-3 border-top">
-            <div class="col-12 d-flex justify-content-end ">
-
-              <button type="button"
-                class="btn btn-primary d-flex flex-column justify-content-center align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                  class="bi bi-collection-play-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm6.258-6.437a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z" />
-                </svg>
-                Randomize Presenter
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</h1>
+</div>

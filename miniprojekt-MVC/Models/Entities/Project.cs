@@ -11,5 +11,5 @@ public partial class Project
 
     public DateTime Created { get; set; }
 
-    public virtual ICollection<PeopleInGroupProject> PeopleInGroupProjects { get; } = new List<PeopleInGroupProject>();
+    public virtual ICollection<ProjectGroup> ProjectGroups { get; } = new List<ProjectGroup>();
 }

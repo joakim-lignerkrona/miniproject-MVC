@@ -17,5 +17,5 @@ public partial class Person
 
     public int GroupPresentatons { get; set; }
 
-    public virtual ICollection<PeopleInGroupProject> PeopleInGroupProjects { get; } = new List<PeopleInGroupProject>();
+    public virtual ICollection<PersonInGroup> PersonInGroups { get; } = new List<PersonInGroup>();
 }
